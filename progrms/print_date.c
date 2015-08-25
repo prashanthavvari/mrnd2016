@@ -88,7 +88,7 @@ void dat(char c[20])
 		if (((k - l) == 2) && (p == 1))
 		{
 			if ((c[l] <= '3') && (c[l] >= '0'))
-				if ((c[l] == '3') && (c[l + 1] >= 2))
+				if ((c[l] == '3') && (c[l + 1] >= '2'))
 				 printf("invalid");
 				else
 					days(c, l, k);
