@@ -2,7 +2,7 @@
 #include<conio.h>
 void comon(char a[50], char b[50])
 {
-	int x[255], y[255], i;
+	int x[255], y[255], i,t=0;
 	char c[255];
 	for (i = 0; i < 255; i++)
 	{
@@ -17,8 +17,10 @@ void comon(char a[50], char b[50])
 	for (i = 0; i < 255; i++)
 	{
 		if ((x[i] >= 1) && (y[i] >= 1))
-			printf("%c", c[i]);
+			{t=1;printf("%c", c[i]);}
 	}
+	if(t==0)
+	printf("not found");
 }
 void main()
 {
