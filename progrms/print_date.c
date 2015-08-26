@@ -71,7 +71,7 @@ void days(char c[20], int l, int k)
 
 void dat(char c[20])
 {
-	int i, l = 0, k = 0, p = 0,t=0;
+	int i, l = 0, k = 0, p = 0,t=0,xa=0;
 	int s = 0;
 	for (i = 0; c[i] != '\0'; i++)
 	{
@@ -114,6 +114,8 @@ void dat(char c[20])
 				printf("invalid");
 			printf("-");
 		}
+		else
+			xa = 1;
 		if (((k - l) == 5) && (p == 3))
 		{
 			if ((c[l + 1] >= '0') && (c[l + 1] <= '9'))
@@ -152,18 +154,24 @@ void main()
 		if (c[i] == '-')
 		{
 			k = i;
-			t = 1;
+			t = t+1;
 			p = l;
 		}
-		if ((!(k - p >= 2))&&(t==1))
+		if ((!(k - p == 2))&&(t==1))
 		{
 			printf("invalid");
 			s = 1;
 			break;
 		}
+		if (!(k - p == 3) && (t == 2))
+		{
+			printf("invalid");
+			s = 2;
+			break;
+		}
 		l = k;
 	}
-	if (s!=1)
+	if (s==0)
 	dat(c);
 	getch();
 }
