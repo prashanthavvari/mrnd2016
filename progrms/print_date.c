@@ -67,6 +67,11 @@ void days(char c[20], int l, int k)
 		s = (int)c[l + 1] - 49;
 		ones(s);
 	}
+	else if (((c[l] != '1')) && (c[l + 1] == '0'))
+	{
+		s = (int)c[l] - 49;
+		ten(s);
+	}
 }
 
 void dat(char c[20])
@@ -118,9 +123,15 @@ void dat(char c[20])
 				{
 					s = (int)c[l + 2] - 49;
 					ones(s);
-					printf(" hundered and ");
+					printf(" hundered ");
 				}
-				days(c, l + 3, k);
+				if ((c[l + 3] == '0') && (c[l+4]=='0'))
+				{ }
+				else
+				{
+					printf("and ");
+					days(c, l + 3, k);
+				}
 		}
 		if ((p > 2) && (k - l) != 5)
 			printf("invalid year");
